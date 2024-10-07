@@ -19,9 +19,10 @@ export class AuthService {
   }
 
   async login(user: any) {
-    const payload = { email: user.email, sub: user.id }; // JWT에 담을 사용자 정보
+    const payload = { email: user.email, sub: user.id };
     return {
       access_token: this.jwtService.sign(payload), // JWT 토큰 생성
     };
   }
+  
 }
